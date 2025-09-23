@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/aboutTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/league_spartan_regular"
+        android:text="ABOUT RIDER PULSE"
+        android:textColor="@color/primary_blue"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/aboutText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutTitle"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/league_spartan_regular"
+        android:text="This app was developed to help bikers stay safe on the road by managing calls and notifications. The app’s core functionality allows users to activate a 'Drive Mode' with a single tap, which automatically manages incoming calls and blocks distracting notifications. This ensures a focused and secure riding experience without compromising on communication. A custom automated SMS is sent to callers, informing them that the user is currently on the road and will respond shortly. The app prioritizes a sleek, minimalist user interface for easy use and a reliable background service to guarantee continuous operation."
+        android:textColor="@color/text_dark"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/creditsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/league_spartan_regular"
+        android:text="DEVELOPER CREDITS"
+        android:textColor="@color/primary_blue"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/creditsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/creditsTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/league_spartan_regular"
+        android:text="Pranav V\nArtificial Intelligence and Machine Learning\nCMR Institute of Technology\n Bengaluru"
+        android:textColor="@color/text_dark"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+</RelativeLayout>
