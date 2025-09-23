@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import android.graphics.drawable.GradientDrawable
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     private val PERMISSION_REQUEST_CODE = 101
 
-    // An array of the permissions we need
     private val permissions = arrayOf(
         Manifest.permission.READ_PHONE_STATE,
         Manifest.permission.ANSWER_PHONE_CALLS,
@@ -48,11 +48,9 @@ class MainActivity : AppCompatActivity() {
             requestPermissions()
         }
 
-        // Load the saved message when the app starts
         val savedMessage = sharedPreferences.getString("custom_sms_message", "")
         customMessageEditText.setText(savedMessage)
 
-        // Set the initial button state
         updateButtonUI()
 
         driveModeButton.setOnClickListener {
@@ -136,13 +134,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateButtonUI() {
         val isDriveModeOn = sharedPreferences.getBoolean("driveModeState", false)
-        driveModeButton.setTextColor(ContextCompat.getColor(this, R.color.white))
+        val drawable = driveModeButton.background as GradientDrawable
+
+        driveModeButton.text = if (isDriveModeOn) "DRIVE MODE ON" else "DRIVE MODE OFF"
+        driveModeButton.setTextColor(ContextCompat.getColor(this, R.color.text_dark))
+
         if (isDriveModeOn) {
-            driveModeButton.text = "DRIVE MODE ON"
-            driveModeButton.setBackgroundResource(R.drawable.circular_button_on)
+            drawable.setStroke(4, ContextCompat.getColor(this, R.color.on_green))
         } else {
-            driveModeButton.text = "DRIVE MODE OFF"
-            driveModeButton.setBackgroundResource(R.drawable.circular_button_off)
+            drawable.setStroke(4, ContextCompat.getColor(this, R.color.off_red))
         }
     }
 }

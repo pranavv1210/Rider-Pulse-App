@@ -6,8 +6,11 @@
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
+
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_PHONE_CALL" />
+
+    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -18,13 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RiderPulse">
-        <activity
-            android:name=".AboutActivity"
-            android:exported="false" />
 
-        <receiver
-            android:name=".CallReceiver"
-            android:exported="true">
+        <receiver android:name=".CallReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
@@ -35,6 +33,7 @@
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="phoneCall" />
+
         <service
             android:name=".NotificationBlockerService"
             android:enabled="true"
@@ -50,10 +49,13 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+
+    </application>
 </manifest>
