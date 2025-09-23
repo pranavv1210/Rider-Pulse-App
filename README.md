@@ -1,4 +1,4 @@
-# 🏍️ Rider Pulse
+# 🏍️ Rider Pulse App
 
 ## 📝 App Overview
 
